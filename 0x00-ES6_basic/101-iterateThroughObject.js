@@ -1,9 +1,9 @@
 export default function iterateThroughObject(reportWithIterator) {
-  const employees = [];
+  const myemployees = [];
 
   for (const employee of reportWithIterator) {
-    employees.push(employee);
+    myemployees.push(employee);
   }
 
-  return employees.join(' | ');
+  return myemployees.join(' | ');
 }
