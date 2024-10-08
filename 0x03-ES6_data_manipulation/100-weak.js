@@ -2,6 +2,8 @@ export const weakMap = new WeakMap();
 
 
 const callPoint = 5;
+
+
 export function queryAPI(endpoint) {
   if (!weakMap.has(endpoint)) {
     weakMap.set(endpoint, 0);
