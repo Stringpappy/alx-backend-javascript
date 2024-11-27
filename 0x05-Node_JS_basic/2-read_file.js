@@ -1,4 +1,4 @@
-const my_var = require('fs');
+const myVar = require('fs');
 
 /**
  * Counts the students in a CSV data file.
@@ -6,13 +6,13 @@ const my_var = require('fs');
  * @author Bezaleel Olakunori <https://github.com/B3zaleel>
  */
 const countStudents = (dataPath) => {
-  if (!my_var.existsSync(dataPath)) {
+  if (!myVar.existsSync(dataPath)) {
     throw new Error('Cannot load the database');
   }
-  if (!my_var.statSync(dataPath).isFile()) {
+  if (!myVar.statSync(dataPath).isFile()) {
     throw new Error('Cannot load the database');
   }
-  const fileLines = my_var
+  const fileLines = myVar
     .readFileSync(dataPath, 'utf-8')
     .toString('utf-8')
     .trim()
@@ -28,9 +28,9 @@ const countStudents = (dataPath) => {
     if (!Object.keys(studentGroups).includes(field)) {
       studentGroups[field] = [];
     }
-    const entry_student = studentPropNames
+    const entryStudent = studentPropNames
       .map((propName, idx) => [propName, studentPropValues[idx]]);
-    studentGroups[field].push(Object.fromEntries(entry_student));
+    studentGroups[field].push(Object.fromEntries(entryStudent));
   }
 
   const totalStudents = Object
